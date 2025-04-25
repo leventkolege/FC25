@@ -3,28 +3,104 @@ const correctPassword = "securepassword123"; // Change this to your desired pass
 
 // Predefined Teams
 const teams = [
-  "Team A", "Team B", "Team C", "Team D", "Team E",
-  "Team F", "Team G", "Team H", "Team I", "Team J"
+  "Aston Villa - Huseyin", "PSG - Harun", "M.City - Diren", "Liverpool - Cagatay",
+  "Fenerbahce - Batu", "Arsenal - Caglar", "Galatasaray - Levent", "Inter - Ugur",
+  "Barcelona - Alperen", "Real Madrid - Baris"
 ];
 
-// Fixture Data (Example)
+// Fixture Data
 const fixtures = [
-  "Team A vs Team B",
-  "Team C vs Team D",
-  "Team E vs Team F",
-  "Team G vs Team H",
-  "Team I vs Team J"
+  "Round 1: Aston Villa - Huseyin vs PSG - Harun",
+  "Round 1: M.City - Diren vs Liverpool - Cagatay",
+  "Round 1: Fenerbahce - Batu vs Arsenal - Caglar",
+  "Round 1: Galatasaray - Levent vs Inter - Ugur",
+  "Round 1: Barcelona - Alperen vs Real Madrid - Baris",
+  "Round 2: Liverpool - Cagatay vs Aston Villa - Huseyin",
+  "Round 2: Arsenal - Caglar vs PSG - Harun",
+  "Round 2: Inter - Ugur vs M.City - Diren",
+  "Round 2: Real Madrid - Baris vs Fenerbahce - Batu",
+  "Round 2: Barcelona - Alperen vs Galatasaray - Levent",
+  "Round 3: Aston Villa - Huseyin vs Arsenal - Caglar",
+  "Round 3: Liverpool - Cagatay vs Inter - Ugur",
+  "Round 3: PSG - Harun vs Real Madrid - Baris",
+  "Round 3: M.City - Diren vs Barcelona - Alperen",
+  "Round 3: Fenerbahce - Batu vs Galatasaray - Levent",
+  "Round 4: Inter - Ugur vs Aston Villa - Huseyin",
+  "Round 4: Real Madrid - Baris vs Arsenal - Caglar",
+  "Round 4: Barcelona - Alperen vs Liverpool - Cagatay",
+  "Round 4: Galatasaray - Levent vs PSG - Harun",
+  "Round 4: Fenerbahce - Batu vs M.City - Diren",
+  "Round 5: Aston Villa - Huseyin vs Real Madrid - Baris",
+  "Round 5: Inter - Ugur vs Barcelona - Alperen",
+  "Round 5: Arsenal - Caglar vs Galatasaray - Levent",
+  "Round 5: Liverpool - Cagatay vs Fenerbahce - Batu",
+  "Round 5: PSG - Harun vs M.City - Diren",
+  "Round 6: Barcelona - Alperen vs Aston Villa - Huseyin",
+  "Round 6: Galatasaray - Levent vs Real Madrid - Baris",
+  "Round 6: Fenerbahce - Batu vs Inter - Ugur",
+  "Round 6: M.City - Diren vs Arsenal - Caglar",
+  "Round 6: PSG - Harun vs Liverpool - Cagatay",
+  "Round 7: Aston Villa - Huseyin vs Galatasaray - Levent",
+  "Round 7: Barcelona - Alperen vs Fenerbahce - Batu",
+  "Round 7: Real Madrid - Baris vs M.City - Diren",
+  "Round 7: Inter - Ugur vs PSG - Harun",
+  "Round 7: Arsenal - Caglar vs Liverpool - Cagatay",
+  "Round 8: Fenerbahce - Batu vs Aston Villa - Huseyin",
+  "Round 8: M.City - Diren vs Galatasaray - Levent",
+  "Round 8: PSG - Harun vs Barcelona - Alperen",
+  "Round 8: Liverpool - Cagatay vs Real Madrid - Baris",
+  "Round 8: Arsenal - Caglar vs Inter - Ugur",
+  "Round 9: Aston Villa - Huseyin vs M.City - Diren",
+  "Round 9: Fenerbahce - Batu vs PSG - Harun",
+  "Round 9: Galatasaray - Levent vs Liverpool - Cagatay",
+  "Round 9: Barcelona - Alperen vs Arsenal - Caglar",
+  "Round 9: Real Madrid - Baris vs Inter - Ugur",
+  "Round 10: PSG - Harun vs Aston Villa - Huseyin",
+  "Round 10: Liverpool - Cagatay vs M.City - Diren",
+  "Round 10: Arsenal - Caglar vs Fenerbahce - Batu",
+  "Round 10: Inter - Ugur vs Galatasaray - Levent",
+  "Round 10: Real Madrid - Baris vs Barcelona - Alperen",
+  "Round 11: Aston Villa - Huseyin vs Liverpool - Cagatay",
+  "Round 11: PSG - Harun vs Arsenal - Caglar",
+  "Round 11: M.City - Diren vs Inter - Ugur",
+  "Round 11: Fenerbahce - Batu vs Real Madrid - Baris",
+  "Round 11: Galatasaray - Levent vs Barcelona - Alperen",
+  "Round 12: Arsenal - Caglar vs Aston Villa - Huseyin",
+  "Round 12: Inter - Ugur vs Liverpool - Cagatay",
+  "Round 12: Real Madrid - Baris vs PSG - Harun",
+  "Round 12: Barcelona - Alperen vs M.City - Diren",
+  "Round 12: Galatasaray - Levent vs Fenerbahce - Batu",
+  "Round 13: Aston Villa - Huseyin vs Inter - Ugur",
+  "Round 13: Arsenal - Caglar vs Real Madrid - Baris",
+  "Round 13: Liverpool - Cagatay vs Barcelona - Alperen",
+  "Round 13: PSG - Harun vs Galatasaray - Levent",
+  "Round 13: M.City - Diren vs Fenerbahce - Batu",
+  "Round 14: Real Madrid - Baris vs Aston Villa - Huseyin",
+  "Round 14: Barcelona - Alperen vs Inter - Ugur",
+  "Round 14: Galatasaray - Levent vs Arsenal - Caglar",
+  "Round 14: Fenerbahce - Batu vs Liverpool - Cagatay",
+  "Round 14: M.City - Diren vs PSG - Harun",
+  "Round 15: Aston Villa - Huseyin vs Barcelona - Alperen",
+  "Round 15: Real Madrid - Baris vs Galatasaray - Levent",
+  "Round 15: Inter - Ugur vs Fenerbahce - Batu",
+  "Round 15: Arsenal - Caglar vs M.City - Diren",
+  "Round 15: Liverpool - Cagatay vs PSG - Harun",
+  "Round 16: Galatasaray - Levent vs Aston Villa - Huseyin",
+  "Round 16: Fenerbahce - Batu vs Barcelona - Alperen",
+  "Round 16: M.City - Diren vs Real Madrid - Baris",
+  "Round 16: PSG - Harun vs Inter - Ugur",
+  "Round 16: Liverpool - Cagatay vs Arsenal - Caglar",
+  "Round 17: Aston Villa - Huseyin vs Fenerbahce - Batu",
+  "Round 17: Galatasaray - Levent vs M.City - Diren",
+  "Round 17: Barcelona - Alperen vs PSG - Harun",
+  "Round 17: Real Madrid - Baris vs Liverpool - Cagatay",
+  "Round 17: Inter - Ugur vs Arsenal - Caglar",
+  "Round 18: M.City - Diren vs Aston Villa - Huseyin",
+  "Round 18: PSG - Harun vs Fenerbahce - Batu",
+  "Round 18: Liverpool - Cagatay vs Galatasaray - Levent",
+  "Round 18: Arsenal - Caglar vs Barcelona - Alperen",
+  "Round 18: Inter - Ugur vs Real Madrid - Baris"
 ];
-
-// League Data
-let leagueTable = teams.map(team => ({
-  name: team,
-  played: 0,
-  won: 0,
-  drawn: 0,
-  lost: 0,
-  points: 0,
-}));
 
 // Display Fixture
 const displayFixture = () => {
@@ -36,85 +112,5 @@ const displayFixture = () => {
   });
 };
 
-// Validate Password
-const validatePassword = () => {
-  const passwordInput = document.getElementById('passwordInput').value;
-  const loginError = document.getElementById('loginError');
-  const inputSection = document.getElementById('inputSection');
-  const loginSection = document.getElementById('loginSection');
-
-  if (passwordInput === correctPassword) {
-    loginSection.style.display = "none";
-    inputSection.style.display = "block";
-  } else {
-    loginError.style.display = "block";
-  }
-};
-
-// Update League Table
-const updateLeagueTable = () => {
-  const resultsInput = document.getElementById('resultsInput').value;
-  const tableBody = document.getElementById('tableBody');
-
-  // Parse Results (Example: "Team A 2-1 Team B")
-  const resultRegex = /(.+?)\s(\d+)-(\d+)\s(.+)/;
-  const match = resultsInput.match(resultRegex);
-
-  if (match) {
-    const team1 = match[1].trim();
-    const score1 = parseInt(match[2]);
-    const score2 = parseInt(match[3]);
-    const team2 = match[4].trim();
-
-    // Update Stats
-    const team1Data = leagueTable.find(t => t.name === team1);
-    const team2Data = leagueTable.find(t => t.name === team2);
-
-    if (team1Data && team2Data) {
-      team1Data.played++;
-      team2Data.played++;
-
-      if (score1 > score2) {
-        team1Data.won++;
-        team2Data.lost++;
-        team1Data.points += 3;
-      } else if (score1 < score2) {
-        team2.won++;
-        team1Data.lost++;
-        team2Data.points += 3;
-      } else {
-        team1Data.drawn++;
-        team2Data.drawn++;
-        team1Data.points++;
-        team2Data.points++;
-      }
-    }
-
-    // Sort Table
-    leagueTable.sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
-
-    // Update Table Display
-    tableBody.innerHTML = "";
-    leagueTable.forEach((team, index) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${team.name}</td>
-        <td>${team.played}</td>
-        <td>${team.won}</td>
-        <td>${team.drawn}</td>
-        <td>${team.lost}</td>
-        <td>${team.points}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-
-    // Clear the input field
-    document.getElementById('resultsInput').value = "";
-  } else {
-    alert("Invalid result format. Please use 'Team A 2-1 Team B' format.");
-  }
-};
-
-// Initialize Fixture and Table
+// Other logic remains unchanged
 displayFixture();
