@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football League</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Football League</h1>
+  </header>
+  <main>
+    <!-- Admin Login Section -->
+    <section id="loginSection">
+      <h2>Admin Login</h2>
+      <input type="password" id="passwordInput" placeholder="Enter password">
+      <button onclick="validatePassword()">Login</button>
+      <p id="loginError" style="color: red; display: none;">Incorrect password. Try again.</p>
+    </section>
+
+    <!-- Input Sections (Hidden by Default) -->
+    <section id="inputSection" style="display: none;">
+      <h2>Enter Weekly Results</h2>
+      <textarea id="resultsInput" placeholder="Enter results here (e.g., Team A 2-1 Team B)"></textarea>
+      <button onclick="updateLeagueTable()">Submit Results</button>
+    </section>
+
+    <!-- Fixture Section -->
+    <section id="fixture">
+      <h2>Fixture</h2>
+      <ul id="fixtureList"></ul>
+    </section>
+
+    <!-- League Table -->
+    <section id="leagueTable">
+      <h2>League Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Drawn</th>
+            <th>Lost</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- League Table Rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
